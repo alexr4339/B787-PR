@@ -1,0 +1,68 @@
+﻿:root {
+  --bodyHeightScale: 1; }
+
+@keyframes TemporaryShow {
+  0%, 100% {
+    visibility: visible; } }
+
+@keyframes TemporaryHide {
+  0%, 100% {
+    visibility: hidden; } }
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  html body {
+    -webkit-user-select: none;
+    font-family: BoeingEICAS;
+    font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+#highlight {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10; }
+
+#Electricity {
+  width: 100%;
+  height: 100%; }
+  #Electricity[state=off] {
+    display: none; }
+
+@font-face {
+  font-family: "BoeingEICAS";
+  src: url("/Fonts/BoeingEICAS.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+b787-10-mfd-element {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-family: BoeingEICAS;
+  overflow: hidden; }
+  b787-10-mfd-element #Electricity {
+    width: 100%;
+    height: 100%; }
+    b787-10-mfd-element #Electricity[state=off] {
+      display: none; }
+  b787-10-mfd-element #highlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none; }
+  b787-10-mfd-element #Mainframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative; }
+
