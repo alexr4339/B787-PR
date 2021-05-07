@@ -931,7 +931,7 @@ class Jet_PFD_AirspeedIndicator extends HTMLElement {
                     line.SVGLine.setAttribute("fill", (this.isHud) ? "lime" : "white");
                     if (line.IsPrimary) {
                         line.SVGText1 = document.createElementNS(Avionics.SVG.NS, "text");
-                        line.SVGText1.setAttribute("x", (linePosX - 10).toString());
+                        line.SVGText1.setAttribute("x", (linePosX - 30).toString());
                         line.SVGText1.setAttribute("fill", (this.isHud) ? "lime" : "white");
                         line.SVGText1.setAttribute("font-size", (this.fontSize * 1.2).toString());
                         line.SVGText1.setAttribute("font-family", "BoeingEICAS");

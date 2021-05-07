@@ -885,7 +885,7 @@ class Jet_PFD_AttitudeIndicator extends HTMLElement {
                                 leftText.setAttribute("y", (pitchFactor * angle - height / 2 + fontSize / 2).toString());
                                 leftText.setAttribute("text-anchor", "end");
                                 leftText.setAttribute("font-size", fontSize.toString());
-                                leftText.setAttribute("font-family", "Roboto-Bold");
+                                leftText.setAttribute("font-family", "BoeingEICAS");
                                 leftText.setAttribute("fill", "lime");
                                 this.attitude_pitch_grads[1].appendChild(leftText);
                                 let leftHLine = document.createElementNS(Avionics.SVG.NS, "line");

@@ -1,5 +1,6 @@
 ﻿:root {
     --bodyHeightScale: 1;
+    --colorAmber: #ffbf00;
 }
 
 @keyframes TemporaryShow {
@@ -99,21 +100,22 @@ b787-10-pfd-element #MainFrame {
 b787-10-pfd-element #LeftDisplay {
     transform: rotateX(0);
     flex: 0 0 33%;
+    /* width: 33%; */
     background: black;
-    border-right: 4px solid #504b6d;
+    border-right: 4px solid #5f5f5f;
 }
 
 b787-10-pfd-element #LeftDisplay .content {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-height: 100%;
+    max-height: 90%;
     overflow: auto;
 }
 
 b787-10-pfd-element #LeftDisplay .content .element {
-    background-color: #504b6d;
-    border-left: 2px solid #504b6d;
+    background-color: #5f5f5f;
+    border-left: 2px solid #5f5f5f;
     border-bottom: 1px solid white;
 }
 
@@ -128,7 +130,7 @@ b787-10-pfd-element #LeftDisplay .content #PlaneInfo #PlaneInfo_Fields {
     flex-direction: column;
     justify-content: space-around;
     width: 15%;
-    color: #69c4ef;
+    color: #52d3f1;
     font-family: BoeingEICAS;
     font-size: 16px;
 }
@@ -167,7 +169,7 @@ b787-10-pfd-element #LeftDisplay #DayInfo #DayInfo_Fields {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: #69c4ef;
+    color: #52d3f1;
     font-family: BoeingEICAS;
     font-size: 16px;
     width: 95%;
@@ -187,7 +189,7 @@ b787-10-pfd-element #LeftDisplay #DayInfo #DayInfo_Values {
 
 b787-10-pfd-element #RightDisplay {
     transform: rotateX(0);
-    flex: 0 0 68%;
+    flex: 0 0 67.5%;
     display: flex;
     flex-direction: column;
 }
@@ -195,7 +197,7 @@ b787-10-pfd-element #RightDisplay {
 b787-10-pfd-element #RightDisplay > .top {
     transform: rotateX(0);
     position: relative;
-    flex: 0 0 68%;
+    flex: 0 0 67.5%;
     background: black;
     overflow: hidden;
 }
@@ -336,6 +338,7 @@ b787-10-pfd-element #RightDisplay > .bottom #Map bing-map {
 }
 
 b787-10-pfd-element #RightDisplay > .bottom #Compass {
+    display: block;
     transform: rotateX(0);
     position: absolute;
     top: 0%;
@@ -448,11 +451,35 @@ jet-pfd-vspeed-indicator[irs-state=aligned] {
     display: none;
 }
 
-#AttBox[irs-state=off], #AttText[irs-state=off] {
+#AttBox[irs-state=off], #AttText[irs-state=off], #AttBox[irs-state=aligning], #AttText[irs-state=aligning]{
     display: block;
 }
 
-#AttBox[irs-state=aligning], #AttBox[irs-state=aligned], #AttText[irs-state=aligning], #AttText[irs-state=aligned] {
+#AttBox[irs-state=aligned], #AttText[irs-state=aligned] {
+    display: none;
+}
+
+b787-10-pfd-element #RightDisplay > .bottom > #FakeHdgSvg > rect {
+    stroke-width: 1;
+    stroke: var(--colorAmber);
+    fill: none;
+}
+
+b787-10-pfd-element #RightDisplay > .bottom > #FakeHdgSvg > text {
+    fill: var(--colorAmber);
+    font-size: 14px;
+    font-family: Roboto-Bold;
+    text-anchor: middle;
+    letter-spacing: normal;
+    alignment-baseline: central;
+}
+
+#FakeHdgSvg[irs-state=off], #FakeHdgSvg[irs-state=aligning]{
+    display: block;
+    position: absolute;
+}
+
+#FakeHdgSvg[irs-state=aligned] {
     display: none;
 }
 
@@ -470,4 +497,12 @@ jet-pfd-vspeed-indicator[irs-state=aligned] {
 
 #GroundLineGroup[irs-state=aligned] {
     display: block;
+}
+
+b787-10-pfd-element #RightDisplay > .bottom #Compass:not([irs-state=aligned]) {
+    display: none;
+}
+
+b787-10-pfd-element #RightDisplay > .bottom #CompassInfos:not([irs-state=aligned]) {
+    display: none;
 }

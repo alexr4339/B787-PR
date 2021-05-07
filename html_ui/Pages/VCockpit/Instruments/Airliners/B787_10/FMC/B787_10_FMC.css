@@ -241,10 +241,10 @@
 
 .fms-exec-light {
     position: absolute;
-    top: 465px;
-    right: 28px;
-    width: 50px;
-    height: 10px;
+    top: 461px;
+    right: 23px;
+    width: 60px;
+    height: 14px;
     background-color: black;
     z-index: 2;
 }
